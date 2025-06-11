@@ -1,0 +1,14 @@
+{
+  "name": "stremio-pip-addon",
+  "version": "1.0.0",
+  "description": "Stremio için video player'a Picture-in-Picture (PIP) modu ekleyen Node.js tabanlı eklenti.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "stremio-addon-sdk": "^1.0.0"
+  }
+}

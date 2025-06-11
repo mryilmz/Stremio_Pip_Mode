@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stremio PIP Eklentisi Yükleyici</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #232526 0%, #414345 100%);
+            color: #fff;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: rgba(30, 30, 30, 0.95);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            padding: 2rem 2.5rem;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            margin-bottom: 2rem;
+        }
+        button {
+            background: #4e54c8;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 0.75rem 2rem;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #565bda;
+        }
+        @media (max-width: 500px) {
+            .container {
+                padding: 1.2rem 0.5rem;
+            }
+            h1 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Stremio PIP Eklentisi</h1>
+        <p>Bu eklenti ile Stremio video oynatıcısında Picture-in-Picture (PIP) modunu kullanabilirsiniz.<br><br>
+        Yüklemek için aşağıdaki butona tıklayın.</p>
+        <button id="installBtn">Stremio'ya Yükle</button>
+    </div>
+    <script>
+        document.getElementById('installBtn').onclick = function() {
+            // Github Pages'de barındırılan manifest URL'sini buraya ekleyin
+            const manifestUrl = window.location.origin + '/manifest.json';
+            // Stremio'nun eklenti yükleme protokolü
+            window.location.href = `stremio://addon-install?url=${encodeURIComponent(manifestUrl)}`;
+        };
+    </script>
+</body>
+</html>
